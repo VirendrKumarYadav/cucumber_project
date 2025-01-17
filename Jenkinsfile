@@ -22,17 +22,17 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh './deploy.sh' // Replace with your deployment script/command
+                sh './deploy.sh'
             }
         }
     }
     post {
         always {
-            // Publish TestNG results
+        
             publishTestNGResults testResultsPattern: '**/target/test-output/testng-results.xml', 
                                   unstableSkips: true
             
-            // Archive the entire test-output directory
+          
             archiveArtifacts artifacts: '**/target/test-output/**/*', fingerprint: true
         }
         success {
