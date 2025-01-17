@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven' 
-        jdk 'JDK'     
-    }
+   
     environment {
         REPORT_DIR = 'target/test-output' 
     }
