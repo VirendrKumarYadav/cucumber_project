@@ -1,11 +1,11 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven' // Ensure Maven is configured in Jenkins
-        jdk 'JDK'     // Ensure JDK is configured in Jenkins
+        maven 'Maven' 
+        jdk 'JDK'     
     }
     environment {
-        REPORT_DIR = 'target/test-output' // TestNG default report directory
+        REPORT_DIR = 'target/test-output' 
     }
     stages {
         stage('Checkout') {
