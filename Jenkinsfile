@@ -5,6 +5,14 @@ pipeline {
         REPORT_DIR = 'target/test-output' 
     }
     stages {
+
+        stage('Pre-check') {
+        steps {
+            sh 'mvn -version'
+            sh 'java -version'
+          }
+      }       
+            
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/VirendrKumarYadav/cucumber_project.git'
