@@ -1,14 +1,7 @@
 pipeline {
     agent any
 
-    stages {
-
-      stage('Pre-check') {
-        steps {
-            sh 'mvn -version'
-            sh 'java -version'
-          }
-       }          
+    stages {         
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/VirendrKumarYadav/cucumber_project.git'
